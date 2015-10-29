@@ -1,0 +1,86 @@
+extends layouts/grid-layout
+
+block content
+  .row
+    h1 Typography
+    p
+      | Lorem ipsum dolor sit amet, consectetuer adipiscing 
+      | elit. Aenean commodo ligula eget dolor. Aenean massa 
+      strong strong
+      | . Cum sociis natoque penatibus 
+      | et magnis dis parturient montes, nascetur ridiculus 
+      | mus. Donec quam felis, ultricies nec, pellentesque 
+      | eu, pretium quis, sem. Nulla consequat massa quis 
+      | enim. Donec pede justo, fringilla vel, aliquet nec, 
+      | vulputate eget, arcu. In enim justo, rhoncus ut, 
+      | imperdiet a, venenatis vitae, justo. Nullam dictum 
+      | felis eu pede 
+      a.external.ext(href='#') link
+      | mollis pretium. Integer tincidunt. Cras dapibus.
+      | Vivamus elementum semper nisi. Aenean vulputate
+      | eleifend tellus. Aenean leo ligula, porttitor eu,
+      | consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+      | dapibus in, viverra quis, feugiat a, tellus. Phasellus
+      | viverra nulla ut metus varius laoreet. Quisque rutrum.
+      | Aenean imperdiet. Etiam ultricies nisi vel augue.
+      | Curabitur ullamcorper ultricies nisi.
+    h2 Aenean commodo ligula eget dolor aenean massa
+    h3
+      | Cum sociis natoque penatibus et magnis dis
+      | parturient montes nascetur ridiculus mus
+    p
+      | Lorem ipsum dolor sit amet, consectetuer adipiscing
+      | elit. Aenean commodo ligula eget dolor. Aenean massa.
+      | Cum sociis natoque penatibus et magnis dis parturient
+      | montes, nascetur ridiculus mus. Donec quam felis,
+      | ultricies nec, pellentesque eu, pretium quis, sem.
+    h1
+      | Lorem ipsum dolor sit amet consectetuer adipiscing
+      | elit
+    h4
+      | Donec quam felis ultricies nec pellentesque eu
+      | pretium quis sem nlla consequat massa quis enim
+    ul
+      li Lorem ipsum dolor sit amet consectetuer.
+      li Aenean commodo ligula eget dolor.
+      li Aenean massa cum sociis natoque penatibus.
+    p
+      | Lorem ipsum dolor sit amet, consectetuer adipiscing
+      | elit. Aenean commodo ligula eget dolor. Aenean massa.
+      | Cum sociis natoque penatibus et magnis dis parturient
+      | montes, nascetur ridiculus mus. Donec quam felis,
+      | ultricies nec, pellentesque eu, pretium quis, sem.
+  hr
+  .row
+    h1 Grid
+    - for (var i = 0; i < 12; i++) {
+      div(class='default-1 small-12 medium-6') .default-1 <br> .small-12 <br> .medium-6
+    - }
+
+    - for (var i = 0; i < 6; i++) {
+      div(class='default-2') .default-2
+    - }
+
+    - for (var i = 0; i < 4; i++) {
+      div(class='default-3') .default-3
+    - }
+
+    - for (var i = 0; i < 3; i++) {
+      div(class='default-4') .default-4
+    - }
+
+    - for (var i = 0; i < 2; i++) {
+      div(class='default-6') .default-6
+    - }
+
+    - for (var i = 0; i < 1; i++) {
+      div(class='default-12') .default-12
+    - }
+
+  .row
+    .default-8.nest
+      .default-5 .default-5 NEST
+      .default-3.last .default-3 NEST LAST
+  .row
+    .default-6.center-block .default.6 CENTER
+  

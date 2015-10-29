@@ -1,0 +1,27 @@
+body{
+	color: #232323;
+}
+
+[class*="default-"]{
+	@include rem(min-height, 6rem);
+	background: rgba(blue, 0.1);
+	margin-bottom: 1.5rem;
+	line-height: 1.5rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	font-family: monospace;
+	&:nth-child(even){
+		background: rgba(red, 0.1);	
+	}
+}
+
+// ========= TYPHORAPHY ========== 
+// see ../utils/_typography.scss
+// ===============================
+
+h1{ @extend %h1; }
+h2{ @extend %h2; }
+h3{ @extend %h3; }
+h4{ @extend %h4; }
+small{ @extend %small;}

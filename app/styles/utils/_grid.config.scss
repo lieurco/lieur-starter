@@ -1,0 +1,42 @@
+/*--------------------------------------------
+	GRID AND BREAKPOINT CONFIGURATION
+	using Susy FTW!
+*--------------------------------------------*/
+
+@import "bower_components/susy/sass/_susy.scss";
+
+/* SUSY SETUP */
+$susy-col: (
+	default: 12,
+	small: 4
+);
+
+$sc-default: map-get($susy-col, default);
+$sc-small: map-get($susy-col, small);
+
+$susy: (
+	columns: $sc-default,
+	column-width: 68px,
+	gutters: 30px/68px,
+	container: 1140px,
+	gutter-position: inside-static,
+	box-sizing: border-box,
+	debug: (
+        image: show,    
+        output: overlay,
+        toggle: top right
+    )
+);
+
+/* BREAKPOINT RANGE SETUP */
+$breakpoint: (
+	small: 0 47.9375em, // 0 - 767px
+	medium: 48em 63.9375em, // 768px - 1023px
+	large: 64em 79.9375em, // 1024px - 1279px
+	x-large: 80em // >= 1280px
+);
+
+$bp-small: map-get($breakpoint, small);
+$bp-medium: map-get($breakpoint, medium);
+$bp-large: map-get($breakpoint, large);
+$bp-xlarge: map-get($breakpoint, x-large);
