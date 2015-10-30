@@ -1,5 +1,18 @@
+*{
+	box-sizing: border-box;
+}
 body{
 	color: #232323;
+	font-family: 'Playfair Display', serif; 
+}
+
+.no-bg{
+	[class*="default-"]{
+		background: none;
+		&:nth-child(even){
+			background: none;	
+		}
+	}
 }
 
 [class*="default-"]{
@@ -7,10 +20,7 @@ body{
 	background: rgba(blue, 0.1);
 	margin-bottom: 1.5rem;
 	line-height: 1.5rem;
-	white-space: nowrap;
-	text-overflow: ellipsis;
 	font-size: 12px;
-	font-family: monospace;
 	&:nth-child(even){
 		background: rgba(red, 0.1);	
 	}
@@ -24,4 +34,70 @@ h1{ @extend %h1; }
 h2{ @extend %h2; }
 h3{ @extend %h3; }
 h4{ @extend %h4; }
-small{ @extend %small;}
+
+hr{
+	border-top: none;
+	border-bottom: 1px solid rgba(black, 0.2);
+}
+
+.table-container{
+	overflow-x: auto;
+}
+
+table{
+	width: 100%;
+}
+th{
+	@include rem(padding, 0.5*$base-line-height);
+	background: #f0f0f0;
+	text-transform: uppercase;
+	text-align: left;
+}
+td{
+	@include rem(padding, 0.5*$base-line-height);
+}
+tr{
+	&:nth-child(even){
+		td { background: #f5f5f5; }
+	}
+}
+
+.text-align-center{
+	text-align: center;
+}
+
+form{
+	> label{
+		//@include rem(margin-bottom, $base-line-height);
+		display: block;
+		> span{
+			@include rem(font-size, 14px);
+			@include rem(line-height, $base-line-height	);
+			display: block;
+		}
+		input[type='text'], input[type='email'], input[type='password']{
+			@include rem(height, 2rem);
+			@include rem(padding, 0.5*$base-line-height);
+			@include rem(margin-bottom, 1rem);
+			border: 1px solid #ccc;
+			width: 100%; 
+		}
+		textarea{
+			@include rem(height, 5rem);
+			@include rem(padding, 0.5*$base-line-height);
+			@include rem(margin-bottom, 1rem);
+			border: 1px solid #ccc;
+			width: 100%;
+			display: block; 
+		}
+		ul{
+			margin-top: 0;
+			list-style: none;
+			padding: 0;
+			@include rem(font-size, 14px);
+		}
+		input[type='radio'], input[type='checkbox']{
+			margin-right: 10px;
+		}
+	}
+}

@@ -1,58 +1,123 @@
 extends layouts/grid-layout
 
 block content
+  h1.text-align-center ≈ Lieur § Starter ≈
+  .row.no-bg
+    h1#typography Typography
+    .default-6
+      p
+        | Lorem ipsum dolor sit amet, consectetuer adipiscing 
+        | elit. Aenean commodo ligula eget dolor. Aenean massa 
+        strong strong 
+        | felis eu pede 
+        a.external.ext(href='#') link 
+        | mollis pretium. Integer tincidunt. Cras dapibus.
+        | Vivamus elementum semper nisi. Aenean vulputat.
+      h2 Aenean commodo ligula eget dolor aenean massa
+      h3
+        | Cum sociis natoque penatibus et magnis dis
+        | parturient montes nascetur ridiculus mus
+      p
+        | Lorem ipsum dolor sit amet, consectetuer adipiscing
+        | elit. Aenean commodo ligula eget dolor. Aenean massa.
+        | Cum sociis natoque penatibus et magnis dis parturient
+        | montes, nascetur ridiculus mus. Donec quam felis,
+        | ultricies nec, pellentesque eu, pretium quis, sem.
+      h1
+        | Lorem ipsum dolor sit amet consectetuer adipiscing
+        | elit
+      h4
+        | Donec quam felis ultricies nec pellentesque eu
+        | pretium quis sem nlla consequat massa quis enim
+      ul
+        li Lorem ipsum dolor sit amet consectetuer.
+        li Aenean commodo ligula eget dolor.
+        li Aenean massa cum sociis natoque penatibus.
+      p
+        | Lorem ipsum dolor sit amet, consectetuer adipiscing
+        | elit. Aenean commodo ligula eget dolor. Aenean massa.
+        | Cum sociis natoque penatibus et magnis dis parturient
+        | montes, nascetur ridiculus mus. Donec quam felis,
+        | ultricies nec, pellentesque eu, pretium quis, sem.
+    .default-6
+      h3#table Table
+      .table-container
+        table
+          thead
+            tr
+              th Head 1
+              th Head 2
+              th Head 3
+          tbody
+            tr
+              td Your content
+              td Yes, it's true
+              td No, you are not
+            tr
+              td Your content
+              td Yes, it's true
+              td No, you are not
+            tr
+              td Your content
+              td Yes, it's true
+              td No, you are not
+            tr
+              td Your content
+              td Yes, it's true
+              td No, you are not
+            tr
+              td Your content
+              td Yes, it's true
+              td No, you are not
+            tr
+              td Your content
+              td Yes, it's true
+              td No, you are not
+
+      h3#form Form
+      form(action='#')
+        label
+          span First Name:
+          input(type='text', placeholder='Please fill this field')
+        label
+          span Last Name:
+          input(type='text', placeholder='Please fill this field')
+        label
+          span Address:
+          textarea
+        label
+          span Sex:
+          ul
+            li
+              label
+                input(type='radio', name='sex') 
+                | Male
+            li
+              label
+                input(type='radio', name='sex') 
+                | Female
+            li
+              label
+                input(type='radio', name='sex') 
+                | Both
+        label
+          span Favorite Food:
+          ul
+            li
+              label
+                input(type='checkbox') 
+                | Nasi Goreng
+            li
+              label
+                input(type='checkbox') 
+                | Pecel
+            li
+              label
+                input(type='checkbox') 
+                | Soto Madura
+
   .row
-    h1 Typography
-    p
-      | Lorem ipsum dolor sit amet, consectetuer adipiscing 
-      | elit. Aenean commodo ligula eget dolor. Aenean massa 
-      strong strong
-      | . Cum sociis natoque penatibus 
-      | et magnis dis parturient montes, nascetur ridiculus 
-      | mus. Donec quam felis, ultricies nec, pellentesque 
-      | eu, pretium quis, sem. Nulla consequat massa quis 
-      | enim. Donec pede justo, fringilla vel, aliquet nec, 
-      | vulputate eget, arcu. In enim justo, rhoncus ut, 
-      | imperdiet a, venenatis vitae, justo. Nullam dictum 
-      | felis eu pede 
-      a.external.ext(href='#') link
-      | mollis pretium. Integer tincidunt. Cras dapibus.
-      | Vivamus elementum semper nisi. Aenean vulputate
-      | eleifend tellus. Aenean leo ligula, porttitor eu,
-      | consequat vitae, eleifend ac, enim. Aliquam lorem ante,
-      | dapibus in, viverra quis, feugiat a, tellus. Phasellus
-      | viverra nulla ut metus varius laoreet. Quisque rutrum.
-      | Aenean imperdiet. Etiam ultricies nisi vel augue.
-      | Curabitur ullamcorper ultricies nisi.
-    h2 Aenean commodo ligula eget dolor aenean massa
-    h3
-      | Cum sociis natoque penatibus et magnis dis
-      | parturient montes nascetur ridiculus mus
-    p
-      | Lorem ipsum dolor sit amet, consectetuer adipiscing
-      | elit. Aenean commodo ligula eget dolor. Aenean massa.
-      | Cum sociis natoque penatibus et magnis dis parturient
-      | montes, nascetur ridiculus mus. Donec quam felis,
-      | ultricies nec, pellentesque eu, pretium quis, sem.
-    h1
-      | Lorem ipsum dolor sit amet consectetuer adipiscing
-      | elit
-    h4
-      | Donec quam felis ultricies nec pellentesque eu
-      | pretium quis sem nlla consequat massa quis enim
-    ul
-      li Lorem ipsum dolor sit amet consectetuer.
-      li Aenean commodo ligula eget dolor.
-      li Aenean massa cum sociis natoque penatibus.
-    p
-      | Lorem ipsum dolor sit amet, consectetuer adipiscing
-      | elit. Aenean commodo ligula eget dolor. Aenean massa.
-      | Cum sociis natoque penatibus et magnis dis parturient
-      | montes, nascetur ridiculus mus. Donec quam felis,
-      | ultricies nec, pellentesque eu, pretium quis, sem.
-  hr
-  .row
-    h1 Grid
+    h1#grid Grid
     - for (var i = 0; i < 12; i++) {
       div(class='default-1 small-12 medium-6') .default-1 <br> .small-12 <br> .medium-6
     - }
