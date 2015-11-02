@@ -120,3 +120,32 @@ figcaption{
 		content:"\2014 \00a0";
 	}
 }
+
+.button{
+	@include inline-block;
+	border: none;
+	background: tomato;
+	color: #fff;
+	text-decoration: none;
+	@include rem((
+		padding: 0.25*$base-line-height $base-line-height,
+		margin: 0.25*$base-line-height
+	));
+	&:hover{
+		background: darkgrey;
+	}
+	&.button--big{
+		$var-size: 1;
+		@include rem((
+			font-size: ms($var-size)/1.2,
+			line-height: $var-size*$base-line-height,
+			padding: 0.5*$base-line-height $base-line-height,
+			margin: 0.5*$base-line-height
+		));
+	}
+	&.button--expand{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}
