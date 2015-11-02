@@ -101,3 +101,22 @@ form{
 		}
 	}
 }
+
+img{
+	max-width: 100%;
+}
+
+figure{
+	margin: 0;
+	img{
+		display: block;
+		@include rem((margin: $base-line-height 0));
+	}
+}
+figcaption{
+	@extend %small;
+	font-style: italic;
+	&:before{
+		content:"\2014 \00a0";
+	}
+}
