@@ -3,8 +3,6 @@
 	using Susy FTW!
 *--------------------------------------------*/
 
-@import "bower_components/susy/sass/_susy.scss";
-
 /* SUSY SETUP */
 $susy-col: (
 	default: 12,
@@ -27,16 +25,3 @@ $susy: (
         toggle: top right
     )
 );
-
-/* BREAKPOINT RANGE SETUP */
-$breakpoint: (
-	small: 0 47.9375em, // 0 - 767px
-	medium: 48em 63.9375em, // 768px - 1023px
-	large: 64em 79.9375em, // 1024px - 1279px
-	x-large: 80em // >= 1280px
-);
-
-$bp-small: map-get($breakpoint, small);
-$bp-medium: map-get($breakpoint, medium);
-$bp-large: map-get($breakpoint, large);
-$bp-xlarge: map-get($breakpoint, x-large);

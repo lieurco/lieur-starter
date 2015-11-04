@@ -1,6 +1,13 @@
 *{
 	box-sizing: border-box;
 }
+html {
+  font-size: 16px;
+  //@include susy-breakpoint($bp-xlarge){
+  @include susy-breakpoint($bp-xlarge){
+    font-size: 24px;
+  }
+}
 body{
 	color: #232323;
 	font-family: 'Playfair Display', serif; 
@@ -48,13 +55,13 @@ table{
 	width: 100%;
 }
 th{
-	@include rem(padding, 0.5*$base-line-height);
+	@include remunit(padding, 0.5*$default-line-height);
 	background: #f0f0f0;
 	text-transform: uppercase;
 	text-align: left;
 }
 td{
-	@include rem(padding, 0.5*$base-line-height);
+	@include remunit(padding, 0.5*$default-line-height);
 }
 tr{
 	&:nth-child(even){
@@ -68,33 +75,41 @@ tr{
 
 form{
 	> label{
-		//@include rem(margin-bottom, $base-line-height);
+		//@include rem(margin-bottom, $default-line-height);
 		display: block;
 		> span{
-			@include rem(font-size, 14px);
-			@include rem(line-height, $base-line-height	);
+			@include remunit((
+				font-size: mspow(0)/1.15,
+				line-height: $default-line-height
+			));
+			//@warn "$rem-baseline: " + $rem-baseline;
 			display: block;
 		}
 		input[type='text'], input[type='email'], input[type='password']{
-			@include rem(height, 2rem);
-			@include rem(padding, 0.5*$base-line-height);
-			@include rem(margin-bottom, 1rem);
+			@include remunit((
+				height: 2rem,
+				padding: 0.5*$default-line-height,
+				margin-bottom: 1rem,
+				font-size: mspow(0)/1.15
+			));
 			border: 1px solid #ccc;
 			width: 100%; 
 		}
 		textarea{
-			@include rem(height, 5rem);
-			@include rem(padding, 0.5*$base-line-height);
-			@include rem(margin-bottom, 1rem);
+			@include remunit((
+				height: 5rem,
+				padding: 0.5*$default-line-height,
+				margin-bottom: 1rem
+			));
 			border: 1px solid #ccc;
 			width: 100%;
 			display: block; 
 		}
 		ul{
+			@include remunit(font-size, mspow(0)/1.15);
 			margin-top: 0;
 			list-style: none;
 			padding: 0;
-			@include rem(font-size, 14px);
 		}
 		input[type='radio'], input[type='checkbox']{
 			margin-right: 10px;
@@ -110,7 +125,7 @@ figure{
 	margin: 0;
 	img{
 		display: block;
-		@include rem((margin: $base-line-height 0));
+		@include rem((margin: $default-line-height 0));
 	}
 }
 figcaption{
@@ -128,8 +143,8 @@ figcaption{
 	color: #fff;
 	text-decoration: none;
 	@include rem((
-		padding: 0.25*$base-line-height $base-line-height,
-		margin: 0.25*$base-line-height
+		padding: 0.25*$default-line-height $default-line-height,
+		margin: 0.25*$default-line-height
 	));
 	&:hover{
 		background: darkgrey;
@@ -138,9 +153,9 @@ figcaption{
 		$var-size: 1;
 		@include rem((
 			font-size: ms($var-size)/1.2,
-			line-height: $var-size*$base-line-height,
-			padding: 0.5*$base-line-height $base-line-height,
-			margin: 0.5*$base-line-height
+			line-height: $var-size*$default-line-height,
+			padding: 0.5*$default-line-height $default-line-height,
+			margin: 0.5*$default-line-height
 		));
 	}
 	&.button--expand{
