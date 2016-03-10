@@ -1,0 +1,105 @@
+img{
+	max-width: 100%;
+}
+
+.image-border{
+	border-style: solid;
+	position: relative;
+	@include remunit((
+		border-width: 0.125rem,
+		padding:  0.9375rem
+	)); 
+}
+
+.image-container{
+	border-style: solid;
+	position: relative;
+	@include remunit((
+		border-width: 0.125rem,
+		padding: 0.9375rem
+	)); 
+
+	a{
+		display: block;
+		position: relative;
+		height: 100%;
+		&:before,
+		&:after{
+			transition: 400ms;
+			z-index: 3;
+		}
+		&:hover:before{
+			background: rgba($c-green, 0.8);
+			transform: scale(1);
+		}
+		&:hover:after{
+			opacity: 1;
+		}
+		&:before{
+			content:"";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba($c-green, 0);
+			transform: scale(0);
+		}
+		&:after{
+			content:"j";
+			@include vertical-align($position: absolute);
+			@include remunit(font-size, ms(1));
+			color: #fff;
+			font-family: "lovebird" !important;
+		    font-style: normal !important;
+		    font-weight: normal !important;
+		    font-variant: normal !important;
+		    text-transform: none !important;
+		    speak: none;
+		    line-height: 1;
+		    text-align: center;
+			width: 100%;
+			opacity: 0;
+			top: 50%;
+			left: 0;
+		}
+	}
+
+	img{
+		display: block;
+		//border-radius: 100%;
+		@include susy-breakpoint($bp-xlarge){
+			width: 100%;
+		}
+		/*
+		@include vertical-align($position: relative);
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		max-height: 100%;
+		*/
+	}
+}
+
+.full-rounded{
+	border-radius: 100%;
+	img{
+		border-radius: 100%;	
+	}
+}
+
+figure{
+	margin: 0;
+	img{
+		display: block;
+		@include remunit((margin: $default-line-height 0));
+	}
+}
+figcaption{
+	@extend %small;
+	font-style: italic;
+	&:before{
+		content:"\2014 \00a0";
+	}
+}

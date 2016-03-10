@@ -1,5 +1,15 @@
 @import "../utils/_grid.scss";
 
 .row{
-	@include container();
+	@include container($susy-default);
+	@include susy-breakpoint($bp-small, $susy-small){
+		@include container($susy-small);
+	}
+	@include susy-breakpoint($bp-medium, $susy-medium){
+		@include container($susy-medium);
+	}
+	@include susy-breakpoint($bp-xxlarge, $susy-large){
+		@include container($susy-large);
+	}
+	//@extend %clearfix;
 }

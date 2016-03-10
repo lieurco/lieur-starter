@@ -1,0 +1,21 @@
+.table-container{
+	overflow-x: auto;
+}
+
+table{
+	width: 100%;
+}
+th{
+	@include remunit(padding, 0.5*$default-line-height);
+	background: #f0f0f0;
+	text-transform: uppercase;
+	text-align: left;
+}
+td{
+	@include remunit(padding, 0.5*$default-line-height);
+}
+tr{
+	&:nth-child(even){
+		td { background: #f5f5f5; }
+	}
+}

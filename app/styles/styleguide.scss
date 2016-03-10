@@ -3,12 +3,15 @@
 @import "bower_components/sass-rem/_rem.scss";
 // endbower
 
-//@import 'bower_components/libsass-compass-vertical-rhythm/lib/compass_rhythm';
-
 @import "utils/_var.scss";
 @import "utils/_mixins.scss";
-@import "utils/_typography.scss";
+@import "utils/_typography.config.scss";
+@import "utils/_helper.scss";
 
 @import "base/_base.scss";
+
 @import "layout/_layout.scss";
+@import "pages/_page.scss";
+
 @import "themes/_theme.scss";
+

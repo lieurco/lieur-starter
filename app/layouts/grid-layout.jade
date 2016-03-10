@@ -9,23 +9,34 @@ html.no-js
     // Place favicon.ico and apple-touch-icon.png in the root directory
 
     link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Fira+Mono', rel='stylesheet', type='text/css')
 
     // build:css styles/vendor.css
     // bower:css
     link(rel='stylesheet', href='/bower_components/normalize-css/normalize.css')
     link(rel='stylesheet', href='/bower_components/flexslider/flexslider.css')
+    link(rel='stylesheet', href='/bower_components/normalize-opentype.css/normalize-opentype.css')
     // endbower
     // endbuild
-    
-    // build:css styles/main.css
-    link(rel='stylesheet' href='styles/main.css')
+
+    link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/darkula.min.css")
+
+    // build:css styles/styleguide.css
+    link(rel='stylesheet' href='styles/styleguide.css')
     // endbuild
 
     // build:js scripts/vendor/modernizr.js
     script(src='../bower_components/modernizr/modernizr.js')
     // endbuild
+    
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js")
+    script.
+        hljs.initHighlightingOnLoad();
 
-    link(rel='stylesheet', href='http://basehold.it/24')
+    link(rel='stylesheet', href='http://basehold.it/24', media='screen and (min-width: 48em)')
+    link(rel='stylesheet', href='http://basehold.it/15', media='screen and (max-width: 47.9375em)')
 
   body
     | <!--[if lt IE 10]>

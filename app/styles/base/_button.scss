@@ -1,0 +1,40 @@
+.button{
+	@include inline-block;
+	width: span(4 of 6);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	transition: 400ms;
+	border-radius: 0;
+	border-style: solid;
+	outline: none;
+	@include remunit((
+		font-size: $default-line-height/1.3,
+		line-height: 0,
+		height: 2*$default-line-height,
+		padding: $default-line-height,
+		border-width: 0.125rem
+		//margin: 0 0.25*$default-line-height,
+	));
+	@include susy-breakpoint($bp-small){
+		width: 100%;
+		@include remunit((
+			font-size: $default-line-height
+		));
+	}
+	&.button--big{
+		$var-size: 1;
+		@include remunit((
+			font-size: ms($var-size)/1.2,
+			line-height: $var-size*$default-line-height,
+			padding: 0.5*$default-line-height $default-line-height,
+			margin: 0.5*$default-line-height
+		));
+	}
+	&.button--expand{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}

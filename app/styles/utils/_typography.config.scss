@@ -1,0 +1,120 @@
+// PX to EM function
+@function em($pixels, $context: $browser-context) {
+  	@if (unitless($pixels)) {
+    	$pixels: $pixels * 1px;
+  	}
+
+  	@if (unitless($context)) {
+    	$context: $context * 1px;
+  	}
+
+  	@return $pixels / $context * 1em;
+}
+
+@mixin resbase($breakp, $base-font){
+	@include susy-breakpoint($breakp){
+		@content;
+	}
+}
+
+// OVERRIDE REM function on bower_components/sass-rem/_rem.scss
+// use responsive base-font size instead :)
+@mixin remunit($properties, $values...){
+	@each $breakp, $base-font in $break-bases{
+		@include resbase($breakp, $base-font){
+			$rem-baseline: $base-font !global;
+			$ms-base: $rem-baseline !global;
+			$rem-fallback: true !global;
+			$rem-px-only: false !global;
+
+			//@warn "$rem-baseline: " + $rem-baseline;
+
+			@if type-of($properties) == "map" {
+			    @each $property in map-keys($properties) {
+			      @include rem($property, map-get($properties, $property));
+			    } 
+			} @else {
+				@each $property in $properties {
+				    @if $rem-fallback or $rem-px-only {
+				        #{$property}: rem-convert(px, $values...);
+				    }
+				   	@if not $rem-px-only {
+				        #{$property}: rem-convert(rem, $values...);
+				    }
+				}
+			}
+		}
+	}
+}
+
+@each $breakp, $base-font in $break-bases{
+	@include resbase($breakp, $base-font){
+		$rem-baseline: $base-font !global;
+		$ms-base: $rem-baseline !global;
+		$rem-fallback: true !global;
+		$rem-px-only: false !global;
+		//@warn "$rem-baseline: " + $rem-baseline;
+
+		@each $size, $int in $mod-sizes{
+			%#{$size}{
+				@if $breakp == $bp-frommedium{
+					$browser-context: 16 !global;
+					
+					font-size: em(ms($int));
+					@include rem(margin-bottom, $default-line-height);
+
+					//@warn "$browser-context: " + $browser-context;
+					//Should be 16;
+
+					// Determine line-height manually!? -__-
+					@if $size == big{
+						@include rem(line-height, $default-line-height * 4)
+					} @else if $size == h1{
+						@include rem(line-height, $default-line-height * 3)
+					} @else if $size == h2{
+						@include rem(line-height, $default-line-height * 2)
+					} @else {
+						@include rem(line-height, $default-line-height)
+					}
+				}
+
+				@if $int >= 2{
+					@include rem(margin-top, 2 * $default-line-height)
+				} @else {
+					@include rem(margin-top, 1 * $default-line-height)
+				}
+
+				// FOR SMALL DEVICE ($bp-small)
+				
+				@if $breakp == $bp-small{
+					$browser-context: 10 !global;
+
+					@if $int == 1{
+						font-size: em(ms(4));
+					} @else if $int == 0{
+						font-size: em(ms(3));
+					} @else {
+						font-size: em(ms($int));
+					}
+					@include rem((
+						margin-bottom: $default-line-height
+					));
+
+					@if $size == big{
+						@include rem(line-height, $default-line-height * 4)
+					} @else if $size == h1{
+						@include rem(line-height, $default-line-height * 3)
+					} @else if $size == h2{
+						@include rem(line-height, $default-line-height * 2)
+					}@else {
+						@include rem(line-height, $default-line-height)
+					}
+				}
+			}
+		}
+
+	}
+}
+p, ul, ol, pre, .table-container, blockquote {
+	@extend %default;
+}

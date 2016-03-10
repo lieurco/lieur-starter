@@ -1,0 +1,29 @@
+// ========= TYPHORAPHY ========== 
+// see ../utils/_typography.scss
+// ===============================
+
+h1{ 
+	@extend %h1; 
+	font-family: $f-playfair;
+	font-style: italic;
+	&.big{
+		@extend %big;
+		font-style: normal;
+	}
+}
+h2{ 
+	@extend %h2;
+	font-family: $f-playfair;
+}
+h3{ 
+	@extend %h3; 
+	text-transform: uppercase;
+}
+h4{ 
+	@extend %h4;
+	font-weight: normal;
+}
+
+a{ 
+	outline: none; 
+}

@@ -1,31 +1,36 @@
 @import "bower_components/susy/sass/_susy.scss";
 
-/* BREAKPOINT RANGE SETUP */
+/* ===================================== 
+	BREAKPOINT RANGE SETUP 
+----------------------------------------- */
 $breakpoint: (
-	fromsmall: 0 80em,
+	frommedium: 48em,
 	small: 0 47.9375em, // 0 - 767px
 	medium: 48em 63.9375em, // 768px - 1023px
-	large: 64em 80em, // 1024px - 1200px
-	x-large: 80.0625em // >= 1281px
+	large: 64em, // >= 1024px 
+	x-large: 80.0625em, // >= 1281px
+	xx-large: 100em
 );
 
-$bp-fromsmall: map-get($breakpoint, fromsmall);
+$bp-frommedium: map-get($breakpoint, frommedium);
 $bp-small: map-get($breakpoint, small);
 $bp-medium: map-get($breakpoint, medium);
 $bp-large: map-get($breakpoint, large);
 $bp-xlarge: map-get($breakpoint, x-large);
+$bp-xxlarge: map-get($breakpoint, xx-large);
 
 
+//============================================================
 // TYPOGRAPHY THINGHY
 /*------------------------------------------------------------
 	VERTICAL RYTHM COMPASS -- 
 	kidding, it just use to display baseline grid :P
 --------------------------------------------------------------*/
-	$base-font-size: 24px;
-	$base-line-height: 36px;
+	$base-font-size: 16px;
+	$base-line-height: 24px;
 // ----------------------------------------------------------
 
-// REM-SASS function config ------------------------------------------------------------ //
+// REM-SASS function config --------------------------------//
 // https://github.com/pierreburel/sass-rem
 
 $rem-baseline: 16px;
@@ -36,14 +41,17 @@ $rem-px-only: true;
 
 // MODULARE SCALE CONFIG
 $ms-base: $rem-baseline;
-$ms-ratio: 1.5;
-$default-line-height: 1.5rem;
+$ms-ratio: 1.125;
+$default-line-height: 1.5rem; // -> THIS THE MAGIC NUMBER: http://csswizardry.com/2012/06/single-direction-margin-declarations/;
+$magic-number: 1.5;
+$small-line-height: 1.2rem;
 
 // http://www.gridlover.net/app/ with setting -> Font Size: 16px - Line Height: 1.5 - Scale Factor: 1.5
 // EDIT -> using MODULARE SCALE CONFIG; add $xx-ms-var and ms();
 $mod-sizes: (
-	h1: 3,
-	h2: 2,
+	big: 13,
+	h1: 10,
+	h2: 7,
 	h3: 1,
 	h4: 1,
 	default: 0,
@@ -51,6 +59,25 @@ $mod-sizes: (
 );
 
 $break-bases: (
-  $bp-fromsmall: 16px,
-  $bp-xlarge: 24px
+  $bp-small: 10px,
+  $bp-frommedium: 16px,
+  $bp-xxlarge: 24px
 );
+
+
+//============================================================
+// FONT VARIABLE
+/*------------------------------------------------------------*/
+
+$f-playfair: 'Playfair Display', serif;
+$f-sourcesanpro: 'Source Sans Pro', sans-serif;
+
+
+//============================================================
+// Colo VARIABLE
+/*------------------------------------------------------------*/
+$c-green: #22B573;
+$c-darkgreen: #1F2D27;
+$c-lightgreen: #7AD3AB;
+$c-txtgreen: #4C5752;
+$c-greenpattern: #AFE4CD;

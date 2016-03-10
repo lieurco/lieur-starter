@@ -1,0 +1,39 @@
+body{
+	color: $c-txtgreen;
+}
+
+a{
+	color: $c-green;
+	text-decoration: none;
+	transition: 400ms;
+	&:hover{
+		color: $c-darkgreen;
+	}
+}
+
+h1, h2, h3{
+	color: $c-darkgreen;
+}
+
+form{
+	input[type='text'], input[type='email'], input[type='password'], textarea{
+		box-shadow: 0 0 5px rgba($c-green, 0);
+		border: 1px solid rgba($c-green, 0);
+		&:focus{
+			outline: none;
+			border: 1px solid rgba($c-green, 1);
+			box-shadow: 0 0 5px rgba($c-green, 1);
+		}
+	}
+}
+
+.button{
+	border-color: $c-green;
+	color: $c-green;
+	background: none;
+	&:hover{
+		background: $c-green;
+		color: #fff;
+		border-color: $c-green;
+	}
+}
