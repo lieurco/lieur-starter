@@ -5,4 +5,4 @@ Lieur Front-end starter template. Using `yeoman-gulp-webapp` as automatic workfl
 * [Susy](susy.oddbird.net/) - as smart grid system
 * [Modular Scale](http://www.modularscale.com/) - for meaningful typography
 * [Compas Vertical Rhythm](http://compass-style.org/reference/compass/typography/vertical_rhythm/) - Actually just use it to show baseline grid in debug mode :P. <br>
-We create our formula using the help of [Gridlover App](http://www.gridlover.net/).
+We create our formula by using the help of [Gridlover App](http://www.gridlover.net/).
